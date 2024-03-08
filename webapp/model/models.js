@@ -18,6 +18,13 @@ sap.ui.define([
                 var oModel = new JSONModel(Device);
                 oModel.setDefaultBindingMode("OneWay");
                 return oModel;
+        },
+
+        createTodoModel : function() {
+            var oModel = new JSONModel({
+                todo_list : []
+            });
+            return oModel;
         }
     };
 });
