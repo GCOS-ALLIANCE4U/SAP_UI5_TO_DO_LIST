@@ -21,6 +21,7 @@
                         <Button
                             icon="sap-icon://add"
                             text="Create Item"
+                            press="createTodo"
                         />
                     </Toolbar>
                 </headerToolbar>

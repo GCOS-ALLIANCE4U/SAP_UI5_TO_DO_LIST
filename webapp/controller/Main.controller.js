@@ -23,5 +23,8 @@ sap.ui.define([
                 oModel.setProperty("status", "1", oContext);
         
             },
+            createTodo: function() {
+                
+            }
         });
     });
