@@ -27,10 +27,10 @@
                 <CustomListItem>
                     <HBox id="HBox1" class="sapUiSmallMargin" justifyContent="SpaceBetween" alignItems="Center">
                         <VBox>
-                            <Label text="Title" />
-                            <Text text="Description" />
+                            <Label text="{mTodo>title}" />
+                            <Text text="{mTodo>description}" />
                         </VBox>
-                        <ObjectStatus text="Description1" state="Error"/>
+                        <ObjectStatus text="{path:'mTodo>targetDate'}" state="Error"/>
                         <Button icon="sap-icon://accept" text="Complete"></Button>
                     </HBox>
                 </CustomListItem>
