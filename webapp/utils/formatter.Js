@@ -10,7 +10,7 @@ sap.ui.define([], function () {
             if (iDaysBetween > 0) {
                 return "Warning";
             } else if (iDaysBetween < 0) {
-                return "Succes";
+                return "Success";
             } else { return "Error"; }
         }
     }
