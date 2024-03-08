@@ -9,7 +9,11 @@
         title="{i18n>title}"
     >
         <content>
-            <List id="List1" items="{mTodo>/todo_list}"> <!-- items attribute binds the children of json model's array to the list -->
+            <List
+                id="List1"
+                items="{mTodo>/todo_list}"
+            >
+                <!-- items attribute binds the children of json model's array to the list -->
                 <headerToolbar>
                     <Toolbar id="Toolbar1">
                         <Title
@@ -25,15 +29,27 @@
                         />
                     </Toolbar>
                 </headerToolbar>
-          <!--      If you do not put this, setToComplete is not working -->
-          <CustomListItem visible="{=${mTodo>status}===0}">
-                    <HBox id="HBox1" class="sapUiSmallMargin" justifyContent="SpaceBetween" alignItems="Center">
+                <!--      If you do not put this, setToComplete is not working -->
+                <CustomListItem visible="{=${mTodo>status}===0}">
+                    <HBox
+                        id="HBox1"
+                        class="sapUiSmallMargin"
+                        justifyContent="SpaceBetween"
+                        alignItems="Center"
+                    >
                         <VBox>
                             <Label text="{mTodo>title}" />
                             <Text text="{mTodo>description}" />
                         </VBox>
-                        <ObjectStatus text="{path:'mTodo>targetDate', type:'sap.ui.model.odata.type.Date'}" state="{path:'mTodo>targetDate', formatter : '.formatter.formatDate'}"/>
-                        <Button icon="sap-icon://accept" text="Complete" press="setToComplete"/>
+                        <ObjectStatus
+                            text="{path:'mTodo>targetDate', type:'sap.ui.model.odata.type.Date'}"
+                            state="{path:'mTodo>targetDate', formatter : '.formatter.formatDate'}"
+                        />
+                        <Button
+                            icon="sap-icon://accept"
+                            text="Complete"
+                            press="setToComplete"
+                        />
                     </HBox>
                 </CustomListItem>
             </List>
