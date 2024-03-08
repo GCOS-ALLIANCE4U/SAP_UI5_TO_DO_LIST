@@ -29,6 +29,8 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+                // set the todo model
+                this.setModel(models.createTodoModel(), "mTodo");
             }
         });
     }
