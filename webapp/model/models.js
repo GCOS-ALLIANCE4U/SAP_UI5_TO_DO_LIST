@@ -29,13 +29,13 @@ sap.ui.define([
                         title: "Scrum Master",
                         description: "Passing the Professional Scrum Master Exam",
                         targetDate: new Date("02/21/2024"),
-                        status: 1
+                        status: 0
                     },
                     {
                         title: "Scrum Developer",
                         description: "Passing the Professional Scrum Developer Exam",
                         targetDate: new Date("03/01/2024"),
-                        status: 1
+                        status: 0
                     }
                         ,
                     {
@@ -49,7 +49,7 @@ sap.ui.define([
                         title: "SAPUI5",
                         description: "Creating a to do list app",
                         targetDate: new Date("03/08/2024"),
-                        status: 1
+                        status: 0
                     }
                         ,
                     {
