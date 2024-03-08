@@ -1,7 +1,40 @@
-<mvc:View controllerName="gcosui5todolist.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<mvc:View
+    controllerName="gcosui5todolist.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <List id="List1">
+                <headerToolbar>
+                    <Toolbar id="Toolbar1">
+                        <Title
+                            id="Title1"
+                            text="What to complete?"
+                        />
+                        <ToolbarSpacer />
+                        <!-- ToolbarSpacer separates the title and button -->
+                        <Button
+                            icon="sap-icon://add"
+                            text="Create Item"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <CustomListItem>
+                    <HBox id="HBox1" class="sapUiSmallMargin" justifyContent="SpaceBetween" alignItems="Center">
+                        <VBox>
+                            <Label text="Title" />
+                            <Text text="Description" />
+                        </VBox>
+                        <ObjectStatus text="Description1" state="Error"/>
+                        <Button icon="sap-icon://accept" text="Complete"></Button>
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </content>
     </Page>
 </mvc:View>
