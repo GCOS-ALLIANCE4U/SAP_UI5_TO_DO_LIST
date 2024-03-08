@@ -9,7 +9,7 @@
         title="{i18n>title}"
     >
         <content>
-            <List id="List1">
+            <List id="List1" items="{mTodo>/todo_list}"> <!-- items attribute binds the children of json model's array to the list -->
                 <headerToolbar>
                     <Toolbar id="Toolbar1">
                         <Title
