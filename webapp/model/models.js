@@ -21,6 +21,7 @@ sap.ui.define([
             },
             // Create object todo_list
             // in the component file, I set the mTodo model
+            // status 0 is uncompleted, 1 is completed
             createTodoModel: function () {
                 var oModel = new JSONModel({
 
@@ -28,13 +29,13 @@ sap.ui.define([
                         title: "Scrum Master",
                         description: "Passing the Professional Scrum Master Exam",
                         targetDate: new Date("02/21/2024"),
-                        status: 0
+                        status: 1
                     },
                     {
                         title: "Scrum Developer",
                         description: "Passing the Professional Scrum Developer Exam",
                         targetDate: new Date("03/01/2024"),
-                        status: 0
+                        status: 1
                     }
                         ,
                     {
@@ -48,7 +49,7 @@ sap.ui.define([
                         title: "SAPUI5",
                         description: "Creating a to do list app",
                         targetDate: new Date("03/08/2024"),
-                        status: 0
+                        status: 1
                     }
                         ,
                     {
