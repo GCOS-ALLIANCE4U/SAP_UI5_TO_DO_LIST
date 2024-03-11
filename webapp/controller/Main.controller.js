@@ -63,7 +63,18 @@ sap.ui.define([
                     oDialog.getModel("mCreate").setData(oData);
                     
 
-                })
+                });
+            },
+            saveTodo: function() {
+                var oTodoModel = this.getView().getModel("mTodo"),
+                    aData = oTodoModel.getData();
+                this.createDialog.then(function(oDialog) {
+                    var oData = oDialog.getModel("mCreate").getData();
+                    aData.todo_list.unshift(oData);
+                    oTodoModel.setData(aData);
+                    oDialog.close();
+
+                });
             }
         });
     });
