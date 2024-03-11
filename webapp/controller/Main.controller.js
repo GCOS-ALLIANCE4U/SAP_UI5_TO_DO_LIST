@@ -75,6 +75,17 @@ sap.ui.define([
                     oDialog.close();
 
                 });
+            },
+            deleteTodo : function(oEvent) {
+                var oSource = oEvent.getParameter("listItem"),
+                    oContext = oSource.getBindingContext("mTodo"),
+                    mTodo = this.getView().getModel("mTodo"),
+                    aData = mTodo.getData(),
+                    sPath = oContext.getPath(),
+                    iIndex = sPath.split("/")[2];
+                    aData.todo_list.splice(iIndex, 1);
+                    mTodo.setData(aData);
+            
             }
         });
     });
