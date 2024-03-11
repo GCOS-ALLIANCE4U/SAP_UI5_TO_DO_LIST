@@ -1,13 +1,15 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "gcosui5todolist/utils/formatter",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "sap/ui/model/json/JSONModel"
+
 
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, formatter, Fragment) {
+    function (Controller, formatter, Fragment, JSONModel) {
         "use strict";
 
         return Controller.extend("gcosui5todolist.controller.Main", {
@@ -27,11 +29,28 @@ sap.ui.define([
             },
             // if createDialog is not present, create a fragment
             createTodo: function() {
+
+                // after we created a fragment, we now create an empty data to fill input field
+                // then import JSON model, then create a JSON model instance
+                var oData = {
+                    title:"",
+                    description: "",
+                    targetDate: new Date("07/01/2024"),
+                    status: 0
+
+                }
+
+                // create a fragment
                 if(!this.createDialog){
                     this.createDialog = Fragment.load({
                         type:"XML",
-                        name:"gcosui5todolist.fragment.create"
+                        name:"gcosui5todolist.fragment.create",
+                              // then pass the controller
+                         controller: this     
                     }).then(function(oDialog) {
+                    // create a JSON model instance for the fragment, it will create a new item
+                    // then pass the controller
+                    oDialog.setModel(new JSONModel(oData), "mCreate");
 
                         this.getView().addDependent(oDialog);
                         return oDialog;
@@ -40,6 +59,8 @@ sap.ui.define([
                 }
                 this.createDialog.then(function(oDialog) {
                     oDialog.open();
+                    // set data to create a new item in the fragment
+                    oDialog.getModel("mCreate").setData(oData);
                     
 
                 })

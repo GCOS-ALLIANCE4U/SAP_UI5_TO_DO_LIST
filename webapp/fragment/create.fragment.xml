@@ -13,6 +13,9 @@
 
 </VBox>
 
+<beginButton>
+<Button text="Create"/>
+</beginButton>
 
 </Dialog>
 </core:FragmentDefinition>
