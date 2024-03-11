@@ -12,6 +12,8 @@
             <List
                 id="List1"
                 items="{mTodo>/todo_list}"
+                mode="Delete"
+                delete="deleteTodo"
             >
                 <!-- items attribute binds the children of json model's array to the list -->
                 <headerToolbar>
