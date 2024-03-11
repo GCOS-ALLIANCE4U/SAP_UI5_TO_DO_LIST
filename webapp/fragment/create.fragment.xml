@@ -14,7 +14,7 @@
 </VBox>
 
 <beginButton>
-<Button text="Create"/>
+<Button text="Create" press="saveTodo"/>
 </beginButton>
 
 </Dialog>
